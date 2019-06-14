@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
    
     public static void main(String[] args) {
-        int sum=0, pro=1;
+        int sum=0, pro=1, m=0;
         // 1-й этап - ввод числа
         Scanner in = new Scanner(System.in);
         System.out.print("Input a number: ");
@@ -20,12 +20,15 @@ public class Main {
         }
         
         // Палидром
-        for (int i=0; i<(n/2); ++i){
-            if (num.charAt(i) != num.charAt(n - i - 1)) {
-                System.out.println("Число не является палидромом");
-            }
+        int n1=n;
+        while (n1>=0) {
+            m=m*10+n1%10;
+            n1=n1/10;
         }
-        System.out.println("Число является палидромом");
+        if(n==m) {
+            System.out.println("Число является палидромом");
+        }
+        System.out.println("Число не является палидромом");
         System.out.println("Сумма: " + sum);
         System.out.println("Производство: " + pro);
         
